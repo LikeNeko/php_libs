@@ -1,0 +1,23 @@
+{
+    "name": "nekopoi/libs",
+    "description": "常用的工具方法和类",
+    "type": "library",
+    "license": "mit",
+    "authors": [
+        {
+            "name": "neko",
+            "email": "1330040125@qq.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Neko\\Libs\\": "src"
+        },
+        "files": [
+            "src/helper.php"
+        ]
+    },
+    "require": {
+    }
+}
