@@ -18,4 +18,15 @@ $info = $obj->get('https://baidu.com/?api=aaaa',['info'=>'id\*@ $#!*&>.','num'=>
 // string(84) "https://baidu.com/?api=aaaa&info=id%5C%2A%40+%24%23%21%2A%26%3E.&num=3&va=132.2222222"
 
 
+// 单例
+class A{
+    use \Neko\Libs\NSingleton;
+    public function __construct($a,$b,$c)
+    {
+        var_dump($a,$b,$c);
+    }
+}
+A::getInstance(1,2,3);
+
+
 ```

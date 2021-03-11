@@ -16,7 +16,10 @@ if (!function_exists('math_gtz')) {
 if (!function_exists('c_get')) {
     /**
      * GET方式的请求
+     * ```
+     * 例子
      * c_get('https://baidu.com/',['info'=>'id\*@ $#!*&>.','num'=>3,'va'=>132.2222222],300);
+     * ```
      *
      * @param string $url       请求的链接
      * @param array  $data      get参数
@@ -35,8 +38,10 @@ if (!function_exists('c_get')) {
 if (!function_exists('c_post')) {
     /**
      * Post方式的请求
+     * ```
+     * 例子
      * c_post('https://baidu.com/',['info'=>'id\*@ $#!*&>.','num'=>3,'va'=>132.2222222],300);
-     *
+     * ```
      * @param string $url       请求的链接
      * @param array  $data      参数
      * @param int    $timeout   超时设置，单位：毫秒
@@ -49,5 +54,16 @@ if (!function_exists('c_post')) {
         // 请求失败重试3次 300ms超时
         $obj = new \Neko\Libs\CUrl($retry_num);
         return $obj->post($url, $data, 300);
+    }
+}
+if (!function_exists('ndi')) {
+    /**
+     * 返回di容器类
+     *
+     * @return \Neko\Libs\DependenceInjection
+     */
+    function ndi()
+    {
+        return \Neko\Libs\DependenceInjection::one();
     }
 }
