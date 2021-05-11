@@ -56,7 +56,7 @@ class CUrl {
      * @param int $timeoutMs 超时设置，单位：毫秒
      * @return string 接口返回的内容，超时返回false
      */
-    public function get($url,$data, $timeoutMs = 3000) {
+    public function get($url,$data=[], $timeoutMs = 3000) {
         if ($data){
             // 检查url有没有问号
             if (mb_strpos($url, '?')!=false) {

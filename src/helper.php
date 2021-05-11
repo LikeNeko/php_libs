@@ -67,3 +67,44 @@ if (!function_exists('ndi')) {
         return \Neko\Libs\DependenceInjection::one();
     }
 }
+
+if (!function_exists('time_format')){
+    /**
+     * 将时间转换为指定格式
+     *
+     * @param string $time 时间日期如: 2021-03-14T16:00:00.000+0000
+     * @param string $format 格式
+     *
+     * @return string
+     */
+    function time_format($time, $format='Y-m-d'){
+        $date = new DateTime($time);
+        return $date->format($format);
+    }
+}
+if (!function_exists('multi_array_sort')){
+    /**
+     * 二维数组以key排序
+     *
+     * @param     $multi_array 待排序的数组
+     * @param     $sort_key key
+     * @param int $sort 排序类型
+     *
+     * @return array|false
+     */
+    function multi_array_sort($multi_array,$sort_key,$sort=SORT_ASC){
+        if(is_array($multi_array)){
+            foreach ($multi_array as $row_array){
+                if(is_array($row_array)){
+                    $key_array[] = $row_array[$sort_key];
+                }else{
+                    return false;
+                }
+            }
+        }else{
+            return false;
+        }
+        array_multisort($key_array,$sort,$multi_array);
+        return $multi_array;
+    }
+}

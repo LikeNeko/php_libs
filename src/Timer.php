@@ -125,7 +125,7 @@ class Timer
     {
         $end = time();
         if (!$now) {
-            list($foo, $end) = self::yesterday();
+            [$foo, $end] = self::yesterday();
         }
 
         return [
