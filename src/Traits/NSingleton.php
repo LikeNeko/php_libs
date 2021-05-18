@@ -1,9 +1,15 @@
 <?php
-namespace Neko\Libs;
+namespace Neko\Libs\Traits;
 trait NSingleton
 {
     private static $instance;
 
+    /**
+     * 获得单例
+     *
+     * @param mixed ...$args
+     *
+     */
     static function getInstance(...$args)
     {
         if(!isset(self::$instance)){

@@ -1,6 +1,8 @@
 <?php
 namespace Neko\Libs;
 
+use Neko\Libs\Traits\NSingleton;
+
 /**
  * Tracer 时间打点
  */
