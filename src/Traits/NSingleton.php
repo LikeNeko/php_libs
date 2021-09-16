@@ -7,10 +7,11 @@ trait NSingleton
     /**
      * 获得单例
      *
-     * @param mixed ...$args
+     * @param ...$args
      *
+     * @return static
      */
-    static function getInstance(...$args)
+    static function instance(...$args)
     {
         if(!isset(self::$instance)){
             // 这段代码的有趣之处在于这个static
@@ -19,6 +20,22 @@ trait NSingleton
         return self::$instance;
     }
 
+    /**
+     * 创建一个新的当前对象
+     *
+     * @param ...$args
+     *
+     * @return static
+     */
+    static function make(... $args){
+        return new static(...$args);
+    }
+
+    /**
+     * 销毁单例对象
+     *
+     * @return void
+     */
     static function destruct(){
         self::$instance = null;
     }

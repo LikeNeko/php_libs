@@ -7,7 +7,6 @@ use Neko\Libs\Traits\NSingleton;
  * Tracer 时间打点
  */
 class Tracer {
-    use NSingleton;
 
     /**
      * @var array $timeline 时间线
@@ -17,6 +16,16 @@ class Tracer {
      * @var bool 打开则不记录
      */
     protected $debug = false;
+    /**
+     * 创建一个新的当前对象
+     *
+     * @param ...$args
+     *
+     * @return static
+     */
+    static function make(... $args){
+        return new static(...$args);
+    }
 
     /**
      * 打点，纪录当前时间点
